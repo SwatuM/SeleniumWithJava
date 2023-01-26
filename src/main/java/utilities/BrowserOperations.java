@@ -1,5 +1,8 @@
 package utilities;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -17,6 +20,9 @@ public class BrowserOperations {
 		System.setProperty("webdriver.chrome.driver", "C:\\Users\\IC0N\\eclipse-workspace\\MySelenium\\src\\test\\resources\\drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
+		driver.get("https://demoqa.com/");
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 	
 	/**
