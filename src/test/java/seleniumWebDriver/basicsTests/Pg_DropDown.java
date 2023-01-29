@@ -14,7 +14,7 @@ public class Pg_DropDown extends BrowserOperations {
 	static Pg_DropDown dropDown = new Pg_DropDown();
 	
 	/**
-	 * For select type drop-down.
+	 * For select type drop-down - single selection.
 	 * @throws InterruptedException
 	 */
 	void DropDown_SelectType() throws InterruptedException {
@@ -61,6 +61,10 @@ public class Pg_DropDown extends BrowserOperations {
 		driver.close();
 	}
 	
+	/**
+	 * For select type drop-down - multiple selection.
+	 * @throws InterruptedException
+	 */
 	void DropDown_Multiselect() throws InterruptedException {
 		dropDown.LaunchBrowser_Drivers();
 		
