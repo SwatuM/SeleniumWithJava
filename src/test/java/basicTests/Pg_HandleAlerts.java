@@ -77,11 +77,12 @@ public class Pg_HandleAlerts extends BrowserOperations {
         System.out.println(confirmationAlertResult.getText());
 
         //prompt alert accepted
+        js.executeScript("arguments[0].scrollIntoView();", alertBtn.get(3));
         alertBtn.get(3).click();
         Alert promptAlert = driver.switchTo().alert();
         String promptAlertText = promptAlert.getText();
         System.out.println("Prompt alert text: " + promptAlertText);
-        promptAlert.sendKeys("My mission RBI");
+        promptAlert.sendKeys("123");
         promptAlert.accept();
         System.out.println("Prompt alert accepted.");
         WebElement promptAlertResult = driver.findElement(By.xpath("//span[@id='promptResult']"));
